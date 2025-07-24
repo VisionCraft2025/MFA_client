@@ -48,7 +48,8 @@ void MFAWindow::setupUI()
     
     // 윈도우 설정
     setWindowTitle("MFA 인증 시스템");
-    setFixedSize(450, 400);
+    setMinimumSize(400, 350);
+    resize(450, 400);
     
     // 초기 페이지는 로그인
     showLoginPage();

@@ -2,6 +2,7 @@
 #define QR_CODE_DIALOG_H
 
 #include <QDialog>
+#include <QPainter>
 #include <memory>
 
 QT_BEGIN_NAMESPACE
@@ -19,10 +20,14 @@ public:
     
     void setQRCodeImage(const QPixmap &pixmap);
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     void setupUI(const QString &userId, const QString &secret);
     
     QLabel *qrCodeLabel;
+    QPixmap originalQRCode;
 };
 
 #endif // QR_CODE_DIALOG_H
